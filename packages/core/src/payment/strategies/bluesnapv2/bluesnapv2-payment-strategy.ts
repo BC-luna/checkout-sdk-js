@@ -39,13 +39,13 @@ export default class BlueSnapV2PaymentStrategy implements PaymentStrategy {
             );
         }
 
-        await this._store.dispatch(this._orderActionCreator.submitOrder(orderRequest, options));
-
         const { onLoad, style } = this._initializeOptions;
         const frame = this._createIframe(IFRAME_NAME, style);
         const promise = new CancellablePromise<undefined>(new Promise(noop));
 
         onLoad(frame, () => promise.cancel(new PaymentMethodCancelledError()));
+
+        await this._store.dispatch(this._orderActionCreator.submitOrder(orderRequest, options));
 
         return this._store.dispatch(this._paymentActionCreator.initializeOffsitePayment({
             methodId: payment.methodId,
@@ -82,7 +82,6 @@ export default class BlueSnapV2PaymentStrategy implements PaymentStrategy {
         const iframe = document.createElement('iframe');
 
         iframe.name = name;
-
         if (style) {
             const { border, height, width } = style;
 
