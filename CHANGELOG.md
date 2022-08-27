@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.280.4-alpha.ae59f0ed4476119dc795d485f55e693713e3bca2](https://github.com/bigcommerce/checkout-sdk-js/compare/v1.280.3...v1.280.4-alpha.ae59f0ed4476119dc795d485f55e693713e3bca2) (2022-08-27)
+
+
+### Bug Fixes
+
+* **payment:** INT-6328 Bluesnap open a new tab insted of using iframe to complete order ([ae59f0e](https://github.com/bigcommerce/checkout-sdk-js/commit/ae59f0ed4476119dc795d485f55e693713e3bca2))
+
 ### [1.280.3](https://github.com/bigcommerce/checkout-sdk-js/compare/v1.280.2...v1.280.3) (2022-08-26)
 
 
